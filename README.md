@@ -29,7 +29,7 @@ was model size. It was impossible to load the original model (~400mB) into memor
 Raspberry Pi; this is a common problem for ML 'at the edge'. Several steps were taken to 
 reduce the model size to ~10mB. The model was quantized to use float16 precision (from
 float32). In addition, the model was further compressed using 
-<a href = "https://www.tensorflow.org/lite">Tensorflow Lite</a>. 
+<a href = "https://www.tensorflow.org/lite" target = "_blank">Tensorflow Lite</a>. 
 
 In addition, images from the dataset were resized to 256 by 256 images (from 512 by 512).
 This decreased the size of convolution layer outputs and number of parameters in dense 
