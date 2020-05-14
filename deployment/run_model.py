@@ -8,10 +8,9 @@ from camera import capture_picture
 
 def run_from_dataset():
 
-    image_path = '/home/pi/PycharmProjects/autonomous-robot/dataset/left/image_50.jpg'
+    image_path = '/home/pi/PycharmProjects/autonomous-robot/dataset/right/image_50.jpg'
     
-    image_big = Image.open(image_path)
-    image = np.asarray(image_big.resize((256, 256), Image.BILINEAR)) / 255.0
+    image = np.asarray(Image.open(image_path)) / 255.0
     image = np.expand_dims(image, axis = 0).astype(np.float32)
 
     interpreter = tf.lite.Interpreter(model_path = '/home/pi/PycharmProjects/autonomous-robot/trained_models/model_v1/model.tflite')
@@ -36,12 +35,14 @@ def run_live():
 
     image_path = '/home/pi/PycharmProjects/autonomous-robot/tmp.jpg'
     
+    
+    print('Capturing image...')
     capture_picture(image_path)
 
-    image_big = Image.open(image_path)
-    image = np.asarray(image_big) / 255.0
-    image = np.expand_dims(image, axis=0).astype(np.float32)
+    image = np.asarray(Image.open(image_path)) / 255.0
+    image = np.expand_dims(image, axis = 0).astype(np.float32)
 
+    print('Loading ML model...')
     interpreter = tf.lite.Interpreter(
     model_path='/home/pi/PycharmProjects/autonomous-robot/trained_models/model_v1/model.tflite')
     interpreter.allocate_tensors()
@@ -57,10 +58,13 @@ def run_live():
 
     possible_results = ['Left', 'Right', 'Forwards', 'Stay']
     result = possible_results[result_index]
-
+    
+    print(predictions)
+    
     print(result)
+    return result
 
 
 if __name__ == '__main__':
 
-    run_live()
+    result = run_live()

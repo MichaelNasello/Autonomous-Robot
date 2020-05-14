@@ -25,9 +25,8 @@ def build_dataset():
 
             curr_image_path = os.path.join(image_list, image_path)
 
-            curr_image_big = Image.open(curr_image_path)
+            curr_image = np.asarray(Image.open(curr_image_path)) / 255.0
 
-            curr_image = np.asarray(curr_image_big.resize((256, 256), Image.BILINEAR)) / 255.0
             curr_label = i  # labels are from ['Left', 'Right', 'Forwards', 'Stay']
 
             images.append(curr_image)

@@ -19,7 +19,7 @@ def gather_dataset():
     camera = PiCamera()
     camera.start_preview()
 
-    camera.resolution = (512, 512)
+    camera.resolution = (256, 256)
     camera.rotation = 180
     camera.exposure_mode = 'backlight'
 
