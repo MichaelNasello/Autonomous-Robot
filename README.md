@@ -67,7 +67,7 @@ Validation Accuracy across Epochs: <br><br>
 ![](trained_models/model_v2/val_sparse_categorical_accuracy.png)
 
 
-<h3>Results</h3>
+<h3>Final Product</h3>
 <hr>
 
-A video displaying results will be included upon completion of project.
+For video demo, visit <a href = "http://michaelnasello.ca/#robot-vid">this link</a>.

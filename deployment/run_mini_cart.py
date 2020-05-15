@@ -12,19 +12,19 @@ def autonomous_mini_cart():
         
     if response == 'Right':
         
-        drive_forwards(5, 100, True)
-        turn('right', 10, True)
-        drive_forwards(5, 100, True)
+        drive_forwards(3, 100, True)
+        turn('right', 1.5, True)
+        drive_forwards(7, 100, True)
         
     elif response == 'Left':
         
-        drive_forwards(5, 100, True)
-        turn('left', 10, True)
-        drive_forwards(5, 100, True)
+        drive_forwards(3, 100, True)
+        turn('left', 1.5, True)
+        drive_forwards(7, 100, True)
         
     elif response == 'Forwards':
         
-        drive_forwards(20, 100, True)
+        drive_forwards(15, 100, True)
         
     # do nothing if response == 'stay'
 

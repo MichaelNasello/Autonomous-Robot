@@ -58,10 +58,7 @@ def run_live():
 
     possible_results = ['Left', 'Right', 'Forwards', 'Stay']
     result = possible_results[result_index]
-    
-    print(predictions)
-    
-    print(result)
+        
     return result
 
 
