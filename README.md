@@ -42,13 +42,13 @@ this tutorial</a> for assistance.
 A simple CNN was implemented to generate predictions. One issue specific to this project
 was model size. It was impossible to load the original model (~400MB) into memory on the
 Raspberry Pi; this is a common problem for ML 'at the edge'. Several steps were taken to 
-reduce the model size to ~10MB. The model was quantized to use float16 precision (from
-float32). In addition, the model was further compressed using 
+reduce the model size to ~2MB. The model was quantized to use float16 precision (from
+float32). The model was further compressed using 
 <a href = "https://www.tensorflow.org/lite" target = "_blank">Tensorflow Lite</a>. 
 
 In addition, images from the dataset were resized to 256 by 256 images (from 512 by 512).
 This decreased the size of convolution layer outputs and number of parameters in dense 
-ayers later in the network.
+layers later in the network.
 
 I created my own dataset, gathering approximately 400 images of myself pointing in 
 various directions. There was a 80 / 20 percent split of training and validation images, 
