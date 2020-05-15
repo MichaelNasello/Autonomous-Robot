@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import os
 
 from data import build_dataset
-from model import model_v1, convert_model
+from model import model_v1, model_v2, convert_model
 
 
 def train():
@@ -12,13 +12,13 @@ def train():
 
     x_train, x_test, y_train, y_test = build_dataset()
 
-    neural_net = model_v1()
+    neural_net = model_v2()
     neural_net.compile(loss = 'sparse_categorical_crossentropy', metrics = ['sparse_categorical_accuracy'],
                        optimizer = 'adam')
 
-    history = neural_net.fit(x = x_train, y = y_train, epochs = 10, validation_data = (x_test, y_test), shuffle = True)
+    history = neural_net.fit(x = x_train, y = y_train, epochs = 20, validation_data = (x_test, y_test), shuffle = True)
 
-    save_path = os.path.join('/Users/michaelnasello/PycharmProjects/Autonomous-Robot/trained_models', 'model_v1')
+    save_path = os.path.join('/Users/michaelnasello/PycharmProjects/Autonomous-Robot/trained_models', 'model_v2')
     if not os.path.exists(save_path):
         os.mkdir(save_path)
 

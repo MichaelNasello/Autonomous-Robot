@@ -7,21 +7,46 @@ def model_v1():
 
     model = tf.keras.Sequential()
 
-    model.add(kl.Conv2D(filters=30, kernel_size=(5, 5), input_shape=(256, 256, 3), activation='relu'))
-    model.add(kl.Conv2D(filters=30, kernel_size=(5, 5), activation='relu'))
+    model.add(kl.Conv2D(filters = 30, kernel_size = (5, 5), input_shape = (256, 256, 3), activation = 'relu'))
+    model.add(kl.Conv2D(filters = 30, kernel_size = (5, 5), activation = 'relu'))
     model.add(kl.MaxPool2D())
 
-    model.add(kl.Conv2D(filters=15, kernel_size=(3, 3), activation='relu'))
-    model.add(kl.Conv2D(filters=15, kernel_size=(3, 3), activation='relu'))
+    model.add(kl.Conv2D(filters = 15, kernel_size = (3, 3), activation = 'relu'))
+    model.add(kl.Conv2D(filters = 15, kernel_size = (3, 3), activation = 'relu'))
     model.add(kl.MaxPool2D())
 
     model.add(kl.Flatten())
 
-    model.add(kl.Dense(units=128, activation='relu'))
+    model.add(kl.Dense(units = 128, activation = 'relu'))
     model.add(kl.Dropout(0.5))
-    model.add(kl.Dense(units=50, activation='relu'))
+    model.add(kl.Dense(units = 50, activation = 'relu'))
     model.add(kl.Dropout(0.5))
-    model.add(kl.Dense(units=4, activation='softmax'))
+    model.add(kl.Dense(units = 4, activation = 'softmax'))
+
+    return model
+
+
+def model_v2():
+
+    model = tf.keras.Sequential()
+
+    model.add(kl.Conv2D(filters = 20, kernel_size = (5, 5), input_shape = (256, 256, 3), activation = 'relu'))
+    model.add(kl.MaxPool2D())
+
+    model.add(kl.Conv2D(filters = 15, kernel_size = (4, 4), activation = 'relu'))
+    model.add(kl.Conv2D(filters = 15, kernel_size = (4, 4), activation = 'relu'))
+    model.add(kl.MaxPool2D())
+
+    model.add(kl.Conv2D(filters = 10, kernel_size = (3, 3), activation = 'relu'))
+    model.add(kl.MaxPool2D())
+
+    model.add(kl.Flatten())
+
+    model.add(kl.Dense(units = 150, activation = 'relu'))
+    model.add(kl.Dropout(0.5))
+    model.add(kl.Dense(units = 75, activation = 'relu'))
+    model.add(kl.Dropout(0.5))
+    model.add(kl.Dense(units = 4, activation = 'softmax'))
 
     return model
 

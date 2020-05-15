@@ -52,19 +52,19 @@ ayers later in the network.
 
 I created my own dataset, gathering approximately 400 images of myself pointing in 
 various directions. There was a 80 / 20 percent split of training and validation images, 
-respectively. On the validation set of 80 images, an eventual accuracy of 100% was 
+respectively. On the validation set of 80 images, an eventual accuracy of 88% was 
 achieved.
 
 Below you can observe the progress of training...
 
 Validation Loss across Epochs:<br><br>
-![](trained_models/model_v1/val_loss.png)
+![](trained_models/model_v2/val_loss.png)
 
 <br>
 
 Validation Accuracy across Epochs: <br><br>
 
-![](trained_models/model_v1/val_sparse_categorical_accuracy.png)
+![](trained_models/model_v2/val_sparse_categorical_accuracy.png)
 
 
 <h3>Results</h3>
